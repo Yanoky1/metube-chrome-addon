@@ -219,14 +219,6 @@ For other issues, please [create an issue on GitHub](https://github.com/nanocort
 
 Changes to source files require reloading: click the reload icon on the extension card in `chrome://extensions/`.
 
-### Building
-
-```powershell
-.\build.ps1
-```
-
-Output: `builds\metube_v{version}_chrome\` — unpacked folder ready for `chrome://extensions/` Developer mode.
-
 ## Support
 
 Having issues? Check the [Troubleshooting](#troubleshooting) section above or [create an issue on GitHub](https://github.com/nanocortex/metube-chrome-addon/issues).
