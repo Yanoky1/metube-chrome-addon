@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MeTube extension popup</title>
+    <link rel="stylesheet" href="../common/common.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+
+  <body>
+    <div id="popup-content">
+      <div class="row">
+        <label for="urlInput">URL</label>
+        <input id="urlInput" type="text" placeholder="URL" />
+        <div id="urlValidationMessage" class="validation-error hidden"></div>
+      </div>
+      <div class="options-row">
+        <div class="options-col" data-field-container>
+          <label for="downloadType">Type</label>
+          <select name="downloadType" id="downloadType"></select>
+        </div>
+        <div class="options-col" data-field-container>
+          <label for="codec">Codec</label>
+          <select name="codec" id="codec"></select>
+        </div>
+      </div>
+      <div class="options-row">
+        <div class="options-col" data-field-container>
+          <label for="format">Format</label>
+          <select name="format" id="format"></select>
+        </div>
+        <div class="options-col" data-field-container>
+          <label for="quality">Quality</label>
+          <select name="quality" id="quality"></select>
+        </div>
+      </div>
+        <div class="options-row">
+          <div class="options-col" data-field-container>
+            <label for="subtitleLanguage">Subtitle Language</label>
+            <input id="subtitleLanguage" type="text" placeholder="en" list="subtitleLanguageOptions" />
+            <datalist id="subtitleLanguageOptions"></datalist>
+          </div>
+        <div class="options-col" data-field-container>
+          <label for="subtitleMode">Subtitle Source</label>
+          <select name="subtitleMode" id="subtitleMode"></select>
+        </div>
+      </div>
+      <div class="row">
+        <label for="folder">Folder</label><span class="hint-marker" title="Variables: %HOSTNAME% %DOMAIN% %DATE% %YEAR% %MONTH% %DAY%&#10;Example: videos/%DOMAIN% → videos/youtube.com" aria-label="Supported variables">&#9432;</span>
+        <input id="folder" type="text" placeholder="Folder" title="Variables: %HOSTNAME% %DOMAIN% %DATE% %YEAR% %MONTH% %DAY%&#10;Example: videos/%DOMAIN% → videos/youtube.com" />
+      </div>
+      <div class="row">
+        <label for="customNamePrefix">Custom Name Prefix</label><span class="hint-marker" title="Variables: %HOSTNAME% %DOMAIN% %DATE% %YEAR% %MONTH% %DAY%&#10;Example: %DATE%_ → 2026-08-12_" aria-label="Supported variables">&#9432;</span>
+        <input id="customNamePrefix" type="text" placeholder="Custom Name Prefix" title="Variables: %HOSTNAME% %DOMAIN% %DATE% %YEAR% %MONTH% %DAY%&#10;Example: %DATE%_ → 2026-08-12_" />
+      </div>
+      <div class="row">
+        <input type="checkbox" id="autoStart" />
+        <label for="autoStart">Auto Start</label>
+      </div>
+      <div class="row">
+        <input type="checkbox" id="strictPlaylistMode" />
+        <label for="strictPlaylistMode">Strict Playlist Mode</label>
+      </div>
+      <div id="buttons-row">
+        <button id="sendToMeTube" class="send-to-metube">
+          <span id="loadingSpinner" class="spinner hidden"></span>
+          Send to MeTube
+        </button>
+      </div>
+      <!-- <div id="history"> -->
+      <!--   <span class="spinner"></span> -->
+      <!-- </div> -->
+    </div>
+    <div id="error-content" class="hidden error-msg">
+      <p>Error occurred. Check logs for more information.</p>
+    </div>
+    <div id="success-content" class="hidden success-msg">
+      <p>Successfully sent to MeTube</p>
+    </div>
+    <script src="../common/formats.js"></script>
+    <script src="../common/utils.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

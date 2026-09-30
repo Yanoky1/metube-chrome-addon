@@ -1,0 +1,96 @@
+# Changelog
+
+## 1.8.2 - 2026-08-12
+- The context menu and keyboard shortcut no longer send the download before you can react. With One-Click Mode disabled they now open the popup pre-filled with the target URL, so quality, folder and other options can be adjusted first ([#18](https://github.com/nanocortex/metube-chrome-addon/issues/18)).
+- With One-Click Mode enabled, all four entry points queue the download immediately without opening the popup.
+- Right-clicking a link now carries that link's URL into the popup instead of the URL of the page you are on.
+
+## 1.8.1 - 2026-08-12
+- Default folder and custom name prefix now support variables: `%HOSTNAME%`, `%DOMAIN%`, `%DATE%`, `%YEAR%`, `%MONTH%`, `%DAY%`. For example, a folder of `videos/%DOMAIN%` files a YouTube download under `videos/youtube.com`, so downloads can be categorized by site automatically ([#26](https://github.com/nanocortex/metube-chrome-addon/issues/26)).
+- Variables are resolved against the URL actually being sent, so right-clicking a link uses that link's host rather than the host of the page you're on.
+- Unrecognized `%TOKENS%` are left as-is, so existing folder and prefix values are unaffected.
+
+## 1.8.0 - 2026-06-08
+- Added support for MeTube's new download options: Type (Video/Audio/Captions/Thumbnail) and Codec (Auto/H.264/H.265/AV1/VP9).
+- Format and Quality dropdowns now adapt to the selected Type, matching MeTube's UI exactly (e.g., Audio shows m4a/mp3/opus/wav/flac with per-format bitrate options; Captions shows srt/txt/vtt/ttml).
+- Existing default settings are automatically migrated.
+
+## 1.7.0 - 2026-04-15
+- Fix CORS connection errors after MeTube v2025.4.9 update. If you're affected, re-save your settings in extension options and accept the permission prompt.
+- Improved error messages for connection failures — the extension now detects missing permissions and tells you exactly what to do.
+- Added CORS troubleshooting guide for cases where the permission fix alone isn't enough (set `CORS_ALLOWED_ORIGINS=*` on your MeTube instance).
+
+## 1.6.5 - 2026-04-02
+- Add page context menu — right-click on a video page to send current URL to MeTube (not just links)
+- New setting to enable/disable page context menu independently from link context menu
+
+## 1.6.4 - 2025-11-16
+- Add Strict Playlist Mode option to prevent downloading entire playlists (like YouTube Mixes) when only wanting to save the currently playing video, thanks to [@gmpbigsun](https://github.com/gmpbigsun)
+
+## 1.6.3 - 2025-11-13
+- Add keyboard shortcut (`Ctrl+Shift+M` / `Cmd+Shift+M`) to send current page to MeTube
+- Show loading indicator in popup when using keyboard shortcuts or context menu
+- Prevent duplicate requests when shortcut/context menu is triggered multiple times
+
+## 1.6.2 - 2025-11-11
+- Made SSO / cookie authentication opt-in with optional permissions (`<all_urls>`, `cookies`)
+- Added privacy notice explaining why broad permissions are needed for SSO redirects
+- Reduced default permissions to `activeTab`, `contextMenus`, and `storage` only
+- Improved error messages for authentication failures
+
+## 1.6.1 - 2025-11-10
+- Added `customNamePrefix` and `autoStart` fields to popup
+- Added quality options 360p and 240p
+- Added URL validation in options and popup
+- Added test connection button in options page
+- Added save success indicator in options page
+- Improved error messages to show actual MeTube responses
+- Fixed context menu default setting to be enabled on first install
+
+## 1.6.0 - 2025-11-09
+- Added support for authentication via browser cookies (fixes SSO/reverse proxy auth issues)
+- Replaced XMLHttpRequest with modern `fetch()` API
+- Improved error handling with better error messages
+- Added permissions for cookies and all URLs (required for fetch with credentials)
+
+## 1.5.0 - 2025-04-16
+- Added One-click mode, which automatically sends the current page to MeTube when you click the extension icon (no popup, default values)
+- Changed Auto Start option to `true` by default
+- Improved some options descriptions
+
+## 1.4.2 - 2025-04-15
+- Fixed download folder not properly passed to MeTube when used from popup
+- Improved options readability
+
+## 1.4.1 - 2025-01-16
+- Added missing formats and quality types
+- Added options for folder, autoStart and customNamePrefix
+
+## 1.4.0 - 2024-04-27
+- Added loading spinner when queueing, thanks to [@elwynelwyn](https://github.com/elwynelwyn)
+- Added ability to configure custom headers, thanks to [@elwynelwyn](https://github.com/elwynelwyn)
+
+## 1.3.4 - 2023-03-19
+- Added missing format types: WAV, Opus, M4A, Thumbnail
+- Improved UI to be easier on the eyes
+
+## 1.3.3 - 2022-02-07
+- Added default quality and format option, thanks to [@aYUSHc137](https://github.com/ayushc137)
+- Added URL input field in popup, thanks to [@aYUSHc137](https://github.com/ayushc137)
+- Fixed context menu action not working
+
+## 1.3.2 - 2021-12-12
+- Fixed `shouldShowContextMenu()` return bug, thanks to [@ncwhale](https://github.com/ncwhale)
+
+## 1.3.1 - 2021-12-01
+- Added context menu switch, thanks to [@ncwhale](https://github.com/ncwhale)
+
+## 1.3 - 2021-11-27
+- Added popup when clicking toolbar button for better verbosity
+- Added option to select quality and format
+
+## 1.2 - 2021-11-06
+- Added option in extension preferences to open MeTube instance in new tab
+
+## 1.0–1.1 - 2021-10-13
+- Initial version
