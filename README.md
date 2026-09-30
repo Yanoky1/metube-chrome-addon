@@ -2,10 +2,10 @@
 Browser extension for queueing videos to your [MeTube](https://github.com/alexta69/metube) instance. Manifest V3 — works in Chrome, Edge, and other Chromium-based browsers.
 
 ### Context Menu Integration
-![Context menu on video links](https://github.com/yanoky1/metube-chrome-addon/blob/master/assets/scr_context_menu.png?raw=true)
+![Context menu on video links](assets/scr_context_menu.png)
 
 ### Popup Interface
-![Extension popup with options](https://github.com/yanoky1/metube-chrome-addon/blob/master/assets/scr_button.png?raw=true)
+![Extension popup with options](assets/scr_button.png)
 
 ## Features
 
