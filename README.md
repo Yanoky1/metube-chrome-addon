@@ -1,9 +1,4 @@
 # MeTube Downloader — Chrome Extension
-
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/PLACEHOLDER)](https://chromewebstore.google.com/detail/PLACEHOLDER)
-[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
-[![GitHub issues](https://img.shields.io/github/issues/nanocortex/metube-chrome-addon)](https://github.com/nanocortex/metube-chrome-addon/issues)
-
 Browser extension for queueing videos to your [MeTube](https://github.com/alexta69/metube) instance. Manifest V3 — works in Chrome, Edge, and other Chromium-based browsers.
 
 ### Context Menu Integration
